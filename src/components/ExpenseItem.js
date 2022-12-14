@@ -2,11 +2,12 @@
 // 한 단어 안에 여러단어를 결합할 경우 그 다음 단어 또한 대문자로 즉 파스칼 케이스 문법처럼 해야함
 
 import "./ExpenseItem.css";
+import ExpenseDate from "./ExpenseDate";
 
-function ExpenseItem({ title, amount, date }) {
+function ExpenseItem({ date, title, amount }) {
   return (
     <div className="expense-item">
-      <div>{date.toISOString()}</div>
+      <ExpenseDate date={date} />
       <div className="expense-item__description">
         <h2>{title}</h2>
         <div className="expense-item__price">{amount} 원</div>
