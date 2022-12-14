@@ -3,17 +3,13 @@
 
 import "./ExpenseItem.css";
 
-function ExpenseItem() {
-  const expenseDate = new Date(2022, 11, 14);
-  const expenseTitle = "M1 맥북프로 16인치";
-  const expenseAmount = 1200;
-
+function ExpenseItem({ title, amount, date }) {
   return (
     <div className="expense-item">
-      <div>{expenseDate.toISOString()}</div>
+      <div>{date.toISOString()}</div>
       <div className="expense-item__description">
-        <h2>{expenseTitle}</h2>
-        <div className="expense-item__price">{expenseAmount} 원</div>
+        <h2>{title}</h2>
+        <div className="expense-item__price">{amount} 원</div>
       </div>
     </div>
   );
