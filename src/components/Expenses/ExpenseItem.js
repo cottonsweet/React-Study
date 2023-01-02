@@ -4,20 +4,15 @@
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
-import { useState } from "react";
 
 const ExpenseItem = ({ date, title, amount }) => {
-  const [newTitle, setNewTitle] = useState(title);
-  const handleClick = () => setNewTitle("클릭 그만하셈");
-
   return (
     <Card className="expense-item">
       <ExpenseDate date={date} />
       <div className="expense-item__description">
-        <h2>{newTitle}</h2>
+        <h2>{title}</h2>
         <div className="expense-item__price">{amount} 원</div>
       </div>
-      <button onClick={handleClick}>제목변경</button>
     </Card>
   );
 };
