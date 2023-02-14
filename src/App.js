@@ -1,5 +1,12 @@
-const App = () => {
-  return <div className="App">리액트 복습</div>;
-};
+import ExpenseItem from "./components/ExpenseItem";
+
+function App() {
+  return (
+    <div>
+      <h2>Let's get started!</h2>
+      <ExpenseItem></ExpenseItem>
+    </div>
+  );
+}
 
 export default App;
