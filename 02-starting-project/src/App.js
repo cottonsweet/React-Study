@@ -11,10 +11,8 @@ function App() {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
     if (storedUserLoggedInInformation === "1") {
       setIsLoggedIn(true);
-      console.log("첫번째 실행");
       return;
     }
-    console.log("두번째 실행");
   }, []);
   const loginHandler = (email, password) => {
     // We should of course check email and password
