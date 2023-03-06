@@ -11,11 +11,30 @@ import Button from "../UI/Button/Button";
  * */
 const emailReducer = (state, action) => {
   if (action.type === "USER_INPUT") {
+    /**
+     * action.type이 "USER_INPUT일 경우엔"
+     * value에는 emailChangeHandler이 함수의 e.target.value(state 스냅샷)을 반환
+     * 해당 value에는 사용자가 입력한 input value를 반환함
+     *
+     * isValid에는 email state의 값 안에 "@" 가 있는지 확인 후 true or false를 반환한다.
+     * 해당 isValid에는 사용자가 입력한 input value에 "@" 문자열이 있다면 true or false를 반환함
+     */
     return { value: action.val, isValid: action.val.includes("@") };
   }
   if ((action.type = "INPUT_BLUR")) {
+    /**
+     * action.type이 "INPUT_BLUR" 경우엔"
+     * 해당 value에는 최신 state 스냅샷을 반환한다.
+     * 즉 사용자가 입력한, input value를 반환함
+     *
+     * 해당 isValid에는 최신 state.value 값 안에 "@"가 있느지 확인 후 true or false를 반환함
+     */
+    console.log("이게 최신 스냅샷임", state.value);
+    console.log("이건 인클루드임", state.value.includes("@"));
     return { value: state.value, isValid: state.value.includes("@") };
   }
+
+  // 해당 리듀서로 오는 *다른 모든 액션에* 대해 아래의 기본 state가 반환 된다.
   return { value: "", isValid: false };
 };
 
