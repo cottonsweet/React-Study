@@ -1,3 +1,5 @@
+import Card from "../UI/Card";
+import MealItem from "./MealItem/MealItem";
 import classes from "./AvailableMeals.module.css";
 
 // 더미 데이터
@@ -29,11 +31,13 @@ const DUMMY_MEALS = [
 ];
 // 주문 가능한 음식 컴포넌트를 렌더링함 (음식 목록을 화면에 표시 하는 일)
 const AvailableMeals = () => {
-  const mealsList = DUMMY_MEALS.map((meals) => <li key={meals.id}>{meals.name}</li>);
+  const mealsList = DUMMY_MEALS.map((meals) => <MealItem key={meals.id} name={meals.name} description={meals.description} price={meals.price} />);
 
   return (
     <section className={classes.meals}>
-      <ul>{mealsList}</ul>
+      <Card>
+        <ul>{mealsList}</ul>
+      </Card>
     </section>
   );
 };
