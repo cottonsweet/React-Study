@@ -6,6 +6,7 @@ import classes from "./HeaderCartButton.module.css";
 
 const HeaderCartButton = (props) => {
   const cartCtx = useContext(CartContext);
+  // 리듀스는 내장 메소드이며 데이터 배열을 값 하나로 변환해주는 메소드다
   const numberOfCartItems = cartCtx.items.reduce((carNumber, item) => {
     return carNumber + item.amount;
   }, 0);
