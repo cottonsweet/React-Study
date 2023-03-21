@@ -12,10 +12,10 @@ const cartReducer = (state, action) => {
     // 배열에 새항목을 추가함
     // 푸쉬와 달리 기존 배열을 편집하는게 아닌 새 배열을 반환함
     const updatedItems = state.items.concat(action.item);
-    const newTotalAmount = state.totalAmount + action.item.price * action.item.amount;
+    const updatedTotalAmount = state.totalAmount + action.item.price * action.item.amount;
     return {
       items: updatedItems,
-      totalAmount: updatedItems,
+      totalAmount: updatedTotalAmount,
     };
   }
   if (action.type === "REMOVE") {
