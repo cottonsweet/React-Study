@@ -31,7 +31,7 @@ const DUMMY_MEALS = [
 ];
 // 주문 가능한 음식 컴포넌트를 렌더링함 (음식 목록을 화면에 표시 하는 일)
 const AvailableMeals = () => {
-  const mealsList = DUMMY_MEALS.map((meals) => <MealItem key={meals.id} name={meals.name} description={meals.description} price={meals.price} />);
+  const mealsList = DUMMY_MEALS.map((meals) => <MealItem key={meals.id} id={meals.id} name={meals.name} description={meals.description} price={meals.price} />);
 
   return (
     <section className={classes.meals}>
